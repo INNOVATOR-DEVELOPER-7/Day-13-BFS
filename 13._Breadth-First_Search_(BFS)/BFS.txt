@@ -1,0 +1,42 @@
+- Initial Setup: Start with a graph, represented as nodes (vertices) and edges, and a starting node (source).
+- Queue Initialization: Create a queue and enqueue the starting node. Mark the starting node as visited.
+- Explore Nodes:
+  - Dequeue a node from the queue.
+  - Visit all its adjacent (neighboring) nodes.
+  - If an adjacent node has not been visited, mark it as visited and enqueue it.
+- Repeat: Continue the process until the queue is empty.
+
+Example:
+Graph: 
+
+```
+A - B - C
+|   |
+D - E - F
+|       |
+G - H - I
+```
+
+Starting Node: A
+
+1. Initial Queue: [A]
+2. Dequeue A, visit neighbors: B, D (enqueue B and D)
+   - Queue: [B, D]
+3. Dequeue B, visit neighbors: C, E (enqueue C and E)
+   - Queue: [D, C, E]
+4. Dequeue D, visit neighbors: G (enqueue G)
+   - Queue: [C, E, G]
+5. Dequeue C, no new neighbors.
+   - Queue: [E, G]
+6. Dequeue E, visit neighbor: F (enqueue F)
+   - Queue: [G, F]
+7. Dequeue G, visit neighbors: H (enqueue H)
+   - Queue: [F, H]
+8. Dequeue F, visit neighbors: I (enqueue I)
+   - Queue: [H, I]
+9. Dequeue H, no new neighbors.
+   - Queue: [I]
+10. Dequeue I, no new neighbors.
+    - Queue: [ ] (empty, search complete)
+
+Traversal Order: A, B, D, C, E, G, F, H, I
